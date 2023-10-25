@@ -1,17 +1,17 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: poll-automationapp-deployment
+  name: poll-automation-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: poll-automationapp
+      app: poll-automation
   template:
     metadata:
       name: pollpod
       labels:
-        app: poll-automationapp
+        app: poll-automation
     spec:
       containers:
       - name: automationcontainer
