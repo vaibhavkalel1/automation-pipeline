@@ -9,4 +9,4 @@ spec:
   ports:
     - port: 8000
       targetPort: 8000
-      nodePort: 30011 # You can change this to any available port number above 30000
+      nodePort: 30012 # You can change this to any available port number above 30000
