@@ -14,8 +14,8 @@ spec:
         app: poll-app
     spec:
       containers:
-      - name: pollcontainer
-        image: vaibhavkalel/pollimage1:latest
+      - name: automationcontainer
+        image: vaibhavkalel/pipelineimage:latest
         command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
         ports:
         - containerPort: 8000
