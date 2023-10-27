@@ -94,14 +94,14 @@ pipeline {
         stage('Expose NodePort 8000') {
             steps {
                 script {
-                    bat "kubectl expose deployment poll-automationapp-deployment --type=NodePort --port=8000"
+                    bat "kubectl expose deployment poll-automation_pipeline-deployment --type=NodePort --port=8000"
                 }
             }
         }
         /*stage('Get URL and play with Application') {
             steps {
                 script {
-                    bat "minikube service poll-automationapp-service"
+                    bat "minikube service poll-automationpipeline-service"
                 }
             }
         }*/
