@@ -103,7 +103,7 @@ pipeline {
         stage('List And delete svc and deployment' {
             steps {
                 script {
-                    bat "kubectl delete service poll-automation-service1
+                    bat "kubectl delete service poll-automation-service1"
                     bat "kubectl delete service poll-automation-deployment1"
                     bat "kubectl delete deployment poll-automation-deployment"
                     bat "kubectl get svc"
