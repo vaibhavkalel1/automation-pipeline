@@ -7,21 +7,21 @@ pipeline {
                 git 'https://github.com/vaibhavkalel1/automation-pipeline.git'
             }
         }
-        /*stage('Build Docker Image') {
+        stage('Build Docker Image') {
             steps {
                 script {
                     bat "docker build -t vaibhavkalel/pipelineimage ."
                 }
             }
-        }*/
-        /*stage('Cretae Docker Container') {
+        }
+        stage('Cretae Docker Container') {
             steps {
                 script {
                     bat "docker run -d --name automationcontainer -p 8000:8000  vaibhavkalel/pipelineimage"
                 }
             }
-        }*/
-        /*stage('Push Docker Images to Docker Hub') {
+        }
+        stage('Push Docker Images to Docker Hub') {
 
             steps {
 
@@ -44,7 +44,7 @@ pipeline {
                 }
 
             }
-        }*/
+        }
         /*stage('Download Minikube for Windows') {
             steps {
                 bat 'curl -Lo minikube.exe https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe'
@@ -76,28 +76,28 @@ pipeline {
                 }
             }
         }
-        /*stage('Deploy to Kubernetes') {
+        stage('Deploy to Kubernetes') {
             steps {
                 script {
                     bat "kubectl apply -f deployment.yml"
                 }
             }
-        }*/
-        /*stage('Create NodePort Service') {
+        }
+        stage('Create NodePort Service') {
             steps {
                 script {
                     bat "kubectl apply -f service.yml"
                     bat "kubectl get svc"
                 }
             }
-        }*/
-        /*stage('Expose NodePort 8000') {
+        }
+        stage('Expose NodePort 8000') {
             steps {
                 script {
                     bat "kubectl expose deployment poll-automation-deployment --type=NodePort --port=8000"
                 }
             }
-        }*/
+        }
         stage('Get URL and play with Application') {
             steps {
                 script {
