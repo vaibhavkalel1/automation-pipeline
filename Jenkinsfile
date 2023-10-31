@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Git') {
             steps {
-                git 'https://github.com/vaibhavkalel1/Poll-Automation.git'
+                git 'https://github.com/vaibhavkalel1/automation-pipeline.git'
             }
         }
         stage('Build Docker Image') {
@@ -65,7 +65,7 @@ pipeline {
  
 
                     // Start Minikube
-                    bat "cd C:\\Users\\12826\\.jenkins\\workspace\\Poll-Automation && ${minikubePath} start --driver=docker"
+                    bat "cd C:\\Users\\12826\\.jenkins\\workspace\\Automation-Pipeline && ${minikubePath} start --driver=docker"
                 }
             }
         }
@@ -94,16 +94,16 @@ pipeline {
         stage('Expose NodePort 8000') {
             steps {
                 script {
-                    bat "kubectl expose deployment poll-automation_pipeline-deployment --type=NodePort --port=8000"
+                    bat "kubectl expose deployment poll-automation-deployment --type=NodePort --port=8000"
                 }
             }
         }
-        /*stage('Get URL and play with Application') {
+        stage('Get URL and play with Application') {
             steps {
                 script {
-                    bat "minikube service poll-automationpipeline-service"
+                    bat "minikube service poll-automation-service"
                 }
             }
-        }*/
+        }
     }
 }
