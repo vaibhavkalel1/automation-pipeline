@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/vaibhavkalel1/automation-pipeline.git'
             }
         }
-        stage('Build Docker Image') {
+        /*stage('Build Docker Image') {
             steps {
                 script {
                     bat "docker build -t vaibhavkalel/pipelineimage ."
@@ -44,7 +44,7 @@ pipeline {
                 }
 
             }
-        }
+        }*/
         stage('Download Minikube for Windows') {
             steps {
                 bat 'curl -Lo minikube.exe https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe'
