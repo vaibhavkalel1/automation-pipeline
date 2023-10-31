@@ -103,7 +103,8 @@ pipeline {
         stage('Get URL and play with Application') {
             steps {
                 script {
-                    bat "minikube service poll-automation-service1"
+                    def minikubePath = 'C:\\Users\\12826\\minikube.exe'
+                    bat "${minikubePath} service poll-automation-service1"
                 }
             }
         }
