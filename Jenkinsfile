@@ -99,14 +99,6 @@ pipeline {
                     bat "kubectl expose deployment poll-automation-deployment1 --type=NodePort --port=8000"
                 }
             }
-        }
-        stage('Get URL and play with Application') {
-            steps {
-                script {
-                    def minikubePath = 'C:\\Users\\12826\\minikube.exe'
-                    bat "${minikubePath} service poll-automation-service1"
-                }
-            }
         }*/
         stage('List And delete svc and deployment' {
             steps {
@@ -119,5 +111,13 @@ pipeline {
                 }
             }
         }
+        /*stage('Get URL and play with Application') {
+            steps {
+                script {
+                    def minikubePath = 'C:\\Users\\12826\\minikube.exe'
+                    bat "${minikubePath} service poll-automation-service1"
+                }
+            }
+        }*/
     }
 }
