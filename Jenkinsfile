@@ -65,7 +65,8 @@ pipeline {
  
 
                     // Start Minikube
-                    bat "cd C:\\Users\\12826\\.jenkins\\workspace\\Automation-Pipeline && ${minikubePath} start --driver=docker"
+                    //bat "cd C:\\Users\\12826\\.jenkins\\workspace\\Automation-Pipeline && ${minikubePath} start --driver=docker" 
+                    bat "${minikubePath} start --driver=docker"
                 }
             }
         }
