@@ -73,7 +73,8 @@ pipeline {
         stage('Minikube status') {
             steps {
                 script {
-                    bat "minikube status"
+                    def minikubePath = 'C:\\Users\\12826\\minikube.exe'
+                    bat "${minikubePath} status"
                 }
             }
         }
