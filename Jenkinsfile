@@ -69,8 +69,8 @@ pipeline {
                     bat "${minikubePath} start --driver=docker"
                 }
             }
-        }
-        stage('Minikube status') {
+        }*/
+        /*stage('Minikube status') {
             steps {
                 script {
                     def minikubePath = 'C:\\Users\\12826\\minikube.exe'
