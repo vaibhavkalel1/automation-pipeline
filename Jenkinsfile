@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/vaibhavkalel1/automation-pipeline.git'
             }
         }
-        /*stage('Build Docker Image') {
+        stage('Build Docker Image') {
             steps {
                 script {
                     bat "docker build -t vaibhavkalel/pipelineimage ."
@@ -49,7 +49,7 @@ pipeline {
             steps {
                 bat 'curl -Lo minikube.exe https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe'
             }
-        }*/
+        }
         stage('Install Minikube') {
             steps {
                 bat 'move minikube.exe C:\\Users\\12826'
@@ -65,14 +65,16 @@ pipeline {
  
 
                     // Start Minikube
-                    bat "cd C:\\Users\\12826\\.jenkins\\workspace\\Automation-Pipeline && ${minikubePath} start --driver=docker" 
+                    //bat "cd C:\\Users\\12826\\.jenkins\\workspace\\Automation-Pipeline && ${minikubePath} start --driver=docker" 
+                    bat "${minikubePath} start --driver=docker"
                 }
             }
         }
         stage('Minikube status') {
             steps {
                 script {
-                    bat "minikube status"
+                    def minikubePath = 'C:\\Users\\12826\\minikube.exe'
+                    bat "${minikubePath} status"
                 }
             }
         }
@@ -102,12 +104,10 @@ pipeline {
         stage('Get URL and play with Application') {
             steps {
                 script {
-                    bat "minikube service poll-automation-service1"
+                    def minikubePath = 'C:\\Users\\12826\\minikube.exe'
+                    bat "${minikubePath} service poll-automation-service1"
                 }
             }
         }
     }
 }
-              
-                    
-                    
