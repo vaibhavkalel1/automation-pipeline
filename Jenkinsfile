@@ -76,28 +76,28 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to Kubernetes') {
+        /*stage('Deploy to Kubernetes') {
             steps {
                 script {
                     bat "kubectl apply -f deployment.yml"
                 }
             }
-        }
-        stage('Create NodePort Service') {
+        }*/
+        /*stage('Create NodePort Service') {
             steps {
                 script {
                     bat "kubectl apply -f service.yml"
                     bat "kubectl get svc"
                 }
             }
-        }
-        stage('Expose NodePort 8000') {
+        }*/
+        /*stage('Expose NodePort 8000') {
             steps {
                 script {
                     bat "kubectl expose deployment poll-automation-deployment --type=NodePort --port=8000"
                 }
             }
-        }
+        }*/
         stage('Get URL and play with Application') {
             steps {
                 script {
