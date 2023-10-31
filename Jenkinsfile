@@ -7,21 +7,21 @@ pipeline {
                 git 'https://github.com/vaibhavkalel1/automation-pipeline.git'
             }
         }
-        stage('Build Docker Image') {
+        /*stage('Build Docker Image') {
             steps {
                 script {
                     bat "docker build -t vaibhavkalel/pipelineimage ."
                 }
             }
-        }
-        stage('Cretae Docker Container') {
+        }*/
+        /*stage('Cretae Docker Container') {
             steps {
                 script {
                     bat "docker run -d --name automationcontainer -p 8000:8000  vaibhavkalel/pipelineimage"
                 }
             }
-        }
-        stage('Push Docker Images to Docker Hub') {
+        }*/
+        /*stage('Push Docker Images to Docker Hub') {
 
             steps {
 
@@ -44,19 +44,19 @@ pipeline {
                 }
 
             }
-        }
-        stage('Download Minikube for Windows') {
+        }*/
+        /*stage('Download Minikube for Windows') {
             steps {
                 bat 'curl -Lo minikube.exe https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe'
             }
-        }
-        stage('Install Minikube') {
+        }*/
+        /*stage('Install Minikube') {
             steps {
                 bat 'move minikube.exe C:\\Users\\12826'
                 bat 'setx PATH "%PATH%;C:\\minikube"'
             }
-        }
-        stage('Start Minikube') {
+        }*/
+        /*stage('Start Minikube') {
             steps {
                 script {
                     // Define Minikube installation path (update as needed)
@@ -68,7 +68,7 @@ pipeline {
                     bat "cd C:\\Users\\12826\\.jenkins\\workspace\\Automation-Pipeline && ${minikubePath} start --driver=docker"
                 }
             }
-        }
+        }*/
         stage('Minikube status') {
             steps {
                 script {
