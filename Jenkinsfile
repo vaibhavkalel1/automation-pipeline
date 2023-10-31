@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/vaibhavkalel1/automation-pipeline.git'
             }
         }
-        /*stage('Build Docker Image') {
+        stage('Build Docker Image') {
             steps {
                 script {
                     bat "docker build -t vaibhavkalel/pipelineimage ."
@@ -44,8 +44,8 @@ pipeline {
                 }
 
             }
-        }*/
-        /*stage('Download Minikube for Windows') {
+        }
+        stage('Download Minikube for Windows') {
             steps {
                 bat 'curl -Lo minikube.exe https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe'
             }
@@ -69,8 +69,8 @@ pipeline {
                     bat "${minikubePath} start --driver=docker"
                 }
             }
-        }*/
-        /*stage('Minikube status') {
+        }
+        stage('Minikube status') {
             steps {
                 script {
                     def minikubePath = 'C:\\Users\\12826\\minikube.exe'
@@ -99,24 +99,18 @@ pipeline {
                     bat "kubectl expose deployment poll-automation-deployment1 --type=NodePort --port=8000"
                 }
             }
-        }*/
-        stage('List And delete svc and deployment' {
-            steps {
-                script {
-                    bat "kubectl delete service poll-automation-service1"
-                    bat "kubectl delete service poll-automation-deployment1"
-                    bat "kubectl delete deployment poll-automation-deployment"
-                    bat "kubectl get svc"
-                    bat "kubectl get deployment"
-                }
-            }
         }
-        /*stage('Get URL and play with Application') {
+
+        stage('Get URL and play with Application') {
             steps {
                 script {
                     def minikubePath = 'C:\\Users\\12826\\minikube.exe'
                     bat "${minikubePath} service poll-automation-service1"
                 }
             }
-        }*/
+        }
+    }
 }
+              
+                    
+                    
