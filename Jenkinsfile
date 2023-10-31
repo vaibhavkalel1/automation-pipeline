@@ -45,7 +45,7 @@ pipeline {
 
             }
         }*/
-        stage('Download Minikube for Windows') {
+        /*stage('Download Minikube for Windows') {
             steps {
                 bat 'curl -Lo minikube.exe https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe'
             }
@@ -99,7 +99,7 @@ pipeline {
                     bat "kubectl expose deployment poll-automation-deployment1 --type=NodePort --port=8000"
                 }
             }
-        }
+        }*/
         stage('Get URL and play with Application') {
             steps {
                 script {
