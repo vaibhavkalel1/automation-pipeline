@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/vaibhavkalel1/automation-pipeline.git'
             }
         }
-        stage('Build Docker Image') {
+        /*stage('Build Docker Image') {
             steps {
                 script {
                     bat "docker build -t vaibhavkalel/pipelineimage ."
@@ -99,7 +99,7 @@ pipeline {
                     bat "kubectl expose deployment poll-automation-deployment1 --type=NodePort --port=8000"
                 }
             }
-        }
+        }*/
 
         stage('Get URL and play with Application') {
             steps {
