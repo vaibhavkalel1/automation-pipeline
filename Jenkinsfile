@@ -105,9 +105,10 @@ pipeline {
                 script {
                     def minikubePath = 'C:\\Users\\12826\\minikube.exe'
                     bat "${minikubePath} start"
+                }
+            }
+        }
                     
-        
-
         stage('Get URL and play with Application') {
             steps {
                 script {
