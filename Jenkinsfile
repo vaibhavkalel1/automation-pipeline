@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/vaibhavkalel1/automation-pipeline.git'
             }
         }
-        /*stage('Build Docker Image') {
+        stage('Build Docker Image') {
             steps {
                 script {
                     bat "docker build -t vaibhavkalel/pipelineimage ."
@@ -55,7 +55,7 @@ pipeline {
                 bat 'move minikube.exe C:\\Users\\12826'
                 bat 'setx PATH "%PATH%;C:\\minikube"'
             }
-        }*/
+        }
         stage('Start Minikube') {
             steps {
                 script {
@@ -78,7 +78,7 @@ pipeline {
                 }
             }
         }
-        /*stage('Deploy to Kubernetes') {
+        stage('Deploy to Kubernetes') {
             steps {
                 script {
                     bat "kubectl apply -f deployment.yml"
@@ -99,7 +99,7 @@ pipeline {
                     bat "kubectl expose deployment poll-automation-deployment1 --type=NodePort --port=8000"
                 }
             }
-        }*/            
+        }            
         stage('Get URL and play with Application') {
             steps {
                 script {
